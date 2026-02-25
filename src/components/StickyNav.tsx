@@ -6,6 +6,8 @@ const navItems = [
   { id: "phases", label: "Phases" },
   { id: "workstreams", label: "Workstreams" },
   { id: "checklist", label: "Checklist" },
+  { id: "faqs", label: "FAQs" },
+  { id: "resources", label: "Resources" },
   { id: "governance", label: "Governance" },
 ];
 

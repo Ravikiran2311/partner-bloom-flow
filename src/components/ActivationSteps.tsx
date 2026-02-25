@@ -35,6 +35,7 @@ const ActivationSteps = () => {
             <div>
               <h3 className="font-bold text-foreground text-sm">1️⃣ External Kickoff Mail</h3>
               <p className="text-xs text-muted-foreground">To University — Sent by Aryabo</p>
+              <a href="https://docs.google.com/document/d/1k5TYyLNGOOkWudBCYov76vkM50m4gFzH2SZN5zG-mTU/edit?tab=t.upj6ry9ht2ud" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">View Template ↗</a>
             </div>
           </div>
           <p className="text-sm text-muted-foreground mb-3">Establish structured coordination with the university.</p>
@@ -60,8 +61,9 @@ const ActivationSteps = () => {
               <Mail className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground text-sm">2️⃣ Internal Activation Mail</h3>
+              <h3 className="font-bold text-foreground text-sm">2️⃣ Internal Intimation Mail</h3>
               <p className="text-xs text-muted-foreground">Simultaneous — Sent by Ravi</p>
+              <a href="https://docs.google.com/document/d/1k5TYyLNGOOkWudBCYov76vkM50m4gFzH2SZN5zG-mTU/edit?tab=t.upj6ry9ht2ud" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">View Template ↗</a>
             </div>
           </div>
           <p className="text-sm text-muted-foreground mb-3">Activate internal departments with university details.</p>

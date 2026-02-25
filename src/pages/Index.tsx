@@ -4,6 +4,8 @@ import PhaseTimeline from "@/components/PhaseTimeline";
 import ActivationSteps from "@/components/ActivationSteps";
 import WorkstreamSection from "@/components/WorkstreamSection";
 import ChecklistSection from "@/components/ChecklistSection";
+import FAQSection from "@/components/FAQSection";
+import ResourceLinks from "@/components/ResourceLinks";
 import GovernanceSection from "@/components/GovernanceSection";
 
 const Index = () => {
@@ -15,6 +17,8 @@ const Index = () => {
       <ActivationSteps />
       <WorkstreamSection />
       <ChecklistSection />
+      <FAQSection />
+      <ResourceLinks />
       <GovernanceSection />
       
       {/* Footer */}

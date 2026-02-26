@@ -98,7 +98,7 @@ const HeroSection = () => {
               <div className="w-9 h-9 rounded-lg bg-phase-3/10 flex items-center justify-center">
                 <BookOpen className="w-5 h-5 text-phase-3" />
               </div>
-              <h3 className="font-bold text-foreground text-sm">🏗 Lifecycle Overview</h3>
+              <h3 className="font-bold text-foreground text-sm">🏗 WorkFlow</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
               The NIAT University Partnership Lifecycle is divided into <span className="font-semibold text-foreground">4 Major Phases</span> — from initial university outreach to graduation and batch closure.
@@ -108,9 +108,10 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+              onClick={(e) => { e.preventDefault(); window.open("https://whimsical.com/niat-university-partnership-journey-BNGCtbWn6TkyLbndVb2RtW", "_blank", "noopener,noreferrer"); }}
             >
               <ExternalLink className="w-3.5 h-3.5" />
-              View Full Lifecycle Flowchart on Whimsical ↗
+              View Full WorkFlow on Whimsical ↗
             </a>
           </div>
         </motion.div>

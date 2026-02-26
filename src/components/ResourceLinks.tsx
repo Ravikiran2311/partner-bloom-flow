@@ -62,6 +62,12 @@ const resources = [
     icon: Table2,
     url: "https://docs.google.com/spreadsheets/d/1FDn5p0UmTWvWa3pn9tmVDjjHOpTLxI3jqCT1fPrd_eU/edit?gid=580862037#gid=580862037",
   },
+  {
+    title: "Partnership Presentation",
+    desc: "NIAT University Partnership overview presentation",
+    icon: FolderOpen,
+    url: "https://docs.google.com/presentation/d/1JEIz1KkZHYrPB1_2fJzMbwJIgYMuhXddBdOiUKPWjpQ/edit?usp=sharing",
+  },
 ];
 
 const ResourceLinks = () => {

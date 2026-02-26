@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 210 20% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -18,20 +18,20 @@
     --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 94%;
+    --secondary: 214 20% 93%;
     --secondary-foreground: 222 30% 25%;
 
-    --muted: 220 14% 94%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 214 20% 93%;
+    --muted-foreground: 215 14% 40%;
 
-    --accent: 220 14% 90%;
+    --accent: 214 20% 89%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 88%;
-    --input: 220 13% 88%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
     --ring: 217 91% 50%;
 
     --radius: 0.75rem;
@@ -52,7 +52,7 @@
 
     /* Surfaces */
     --surface-raised: 0 0% 100%;
-    --surface-overlay: 220 14% 96%;
+    --surface-overlay: 214 20% 96%;
 
     /* Glow effects */
     --glow-primary: 217 91% 50%;
@@ -62,9 +62,9 @@
     --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 217 91% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 94%;
+    --sidebar-accent: 214 20% 93%;
     --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 88%;
+    --sidebar-border: 214 20% 88%;
     --sidebar-ring: 217 91% 50%;
   }
 }
@@ -108,11 +108,19 @@
   .glass-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
-    box-shadow: 0 1px 3px hsl(var(--foreground) / 0.04), 0 1px 2px hsl(var(--foreground) / 0.06);
+    box-shadow: 
+      0 1px 3px hsl(var(--foreground) / 0.03),
+      0 4px 16px hsl(var(--foreground) / 0.04);
   }
 
-  .phase-glow-1 { box-shadow: 0 0 20px hsl(var(--phase-1) / 0.08), inset 0 1px 0 hsl(var(--phase-1) / 0.06); }
-  .phase-glow-2 { box-shadow: 0 0 20px hsl(var(--phase-2) / 0.08), inset 0 1px 0 hsl(var(--phase-2) / 0.06); }
-  .phase-glow-3 { box-shadow: 0 0 20px hsl(var(--phase-3) / 0.08), inset 0 1px 0 hsl(var(--phase-3) / 0.06); }
-  .phase-glow-4 { box-shadow: 0 0 20px hsl(var(--phase-4) / 0.08), inset 0 1px 0 hsl(var(--phase-4) / 0.06); }
+  .glass-card:hover {
+    box-shadow: 
+      0 2px 8px hsl(var(--foreground) / 0.05),
+      0 8px 24px hsl(var(--foreground) / 0.06);
+  }
+
+  .phase-glow-1 { box-shadow: 0 0 30px hsl(var(--phase-1) / 0.1), inset 0 1px 0 hsl(var(--phase-1) / 0.08), 0 4px 16px hsl(var(--foreground) / 0.04); }
+  .phase-glow-2 { box-shadow: 0 0 30px hsl(var(--phase-2) / 0.1), inset 0 1px 0 hsl(var(--phase-2) / 0.08), 0 4px 16px hsl(var(--foreground) / 0.04); }
+  .phase-glow-3 { box-shadow: 0 0 30px hsl(var(--phase-3) / 0.1), inset 0 1px 0 hsl(var(--phase-3) / 0.08), 0 4px 16px hsl(var(--foreground) / 0.04); }
+  .phase-glow-4 { box-shadow: 0 0 30px hsl(var(--phase-4) / 0.1), inset 0 1px 0 hsl(var(--phase-4) / 0.08), 0 4px 16px hsl(var(--foreground) / 0.04); }
 }

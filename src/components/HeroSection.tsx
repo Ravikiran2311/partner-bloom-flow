@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, BookOpen, Target, ArrowDown } from "lucide-react";
-
-const stats = [
-  { icon: Target, label: "Training Objective", desc: "Structured lifecycle understanding" },
-  { icon: Users, label: "For Teams", desc: "Zonal Managers, Ops Team, Executives" },
-  { icon: BookOpen, label: "4 Phases", desc: "From outreach to graduation" },
-];
+import { Target, Users, BookOpen, ArrowDown, ExternalLink } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -43,19 +37,82 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
+        {/* Three info cards replacing old stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12"
         >
-          {stats.map((s, i) => (
-            <div key={i} className="glass-card rounded-xl p-5 text-left">
-              <s.icon className="w-5 h-5 text-primary mb-3" />
-              <div className="font-semibold text-foreground text-sm mb-1">{s.label}</div>
-              <div className="text-muted-foreground text-sm">{s.desc}</div>
+          {/* Training Objective */}
+          <div className="glass-card rounded-2xl p-6 text-left">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Target className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground text-sm">🎯 Training Objective</h3>
             </div>
-          ))}
+            <ul className="space-y-2">
+              {[
+                "Structured understanding of the NIAT–University partnership lifecycle",
+                "Define governance and ownership at each stage",
+                "Clarify operational flow from outreach to graduation",
+                "Enable team members to execute independently",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Target Audience */}
+          <div className="glass-card rounded-2xl p-6 text-left">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-phase-2/10 flex items-center justify-center">
+                <Users className="w-5 h-5 text-phase-2" />
+              </div>
+              <h3 className="font-bold text-foreground text-sm">👥 Target Audience</h3>
+            </div>
+            <ul className="space-y-2 mb-3">
+              {[
+                "Zonal Managers",
+                "Core Operations Team",
+                "Newly joined Operations Executives",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs text-foreground font-medium leading-relaxed">
+                  <div className="w-1.5 h-1.5 rounded-full bg-phase-2 mt-1.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-muted-foreground italic">
+              Also helps cross-functional teams understand interdependencies.
+            </p>
+          </div>
+
+          {/* Lifecycle Overview */}
+          <div className="glass-card rounded-2xl p-6 text-left">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-phase-3/10 flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-phase-3" />
+              </div>
+              <h3 className="font-bold text-foreground text-sm">🏗 Lifecycle Overview</h3>
+            </div>
+            <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
+              The NIAT University Partnership Lifecycle is divided into <span className="font-semibold text-foreground">4 Major Phases</span> — from initial university outreach to graduation and batch closure.
+            </p>
+            <a
+              href="https://whimsical.com/niat-university-partnership-journey-BNGCtbWn6TkyLbndVb2RtW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              View Full Lifecycle Flowchart on Whimsical ↗
+            </a>
+          </div>
         </motion.div>
 
         <motion.button

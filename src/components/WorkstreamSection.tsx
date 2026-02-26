@@ -8,6 +8,7 @@ import {
   Megaphone,
   CreditCard,
   ChevronDown,
+  Clock,
 } from "lucide-react";
 
 const workstreams = [
@@ -20,6 +21,8 @@ const workstreams = [
     bgClass: "bg-ws-1",
     borderClass: "border-ws-1",
     critical: false,
+    tat: "2–3 business days after signing the agreement",
+    tatNote: "Written acknowledgement over mail required from the University.",
     warning: "No marketing or admission communication without finalization.",
     items: [
       {
@@ -45,6 +48,8 @@ const workstreams = [
     bgClass: "bg-ws-2",
     borderClass: "border-ws-2",
     critical: true,
+    tat: "18–21 business days after signing the agreement",
+    tatNote: "Written acknowledgement over mail required from the University for BoS readiness.",
     warning: "Delay here impacts entire launch readiness. Curriculum → Faculty Hiring dependency.",
     items: [
       {
@@ -70,6 +75,8 @@ const workstreams = [
     bgClass: "bg-ws-3",
     borderClass: "border-ws-3",
     critical: false,
+    tat: "25 business days after signing the Service Agreement (or MoU) OR 14 business days after signing the Escrow Agreement",
+    tatNote: null,
     warning: "Must be operational before major fee collection.",
     items: [
       {
@@ -94,6 +101,8 @@ const workstreams = [
     bgClass: "bg-ws-4",
     borderClass: "border-ws-4",
     critical: false,
+    tat: "30 business days for Model Classroom & Hostel room after signing Service Agreement/MoU",
+    tatNote: "Complete Infrastructure Readiness date: June 15",
     warning: "Field visits are mandatory.",
     items: [
       {
@@ -119,22 +128,31 @@ const workstreams = [
     bgClass: "bg-ws-5",
     borderClass: "border-ws-5",
     critical: false,
+    tat: null,
+    tatNote: null,
     warning: "Must align with finalized curriculum & seat numbers.",
     items: [
       {
-        heading: "Digital Presence",
+        heading: "Internal Website",
         points: [
           "Partnership live on NIAT website",
-          "Program live on university website",
+          "⏱ TAT: Within 1 business day after signing the agreement",
         ],
       },
       {
-        heading: "Campus Tour & Video",
+        heading: "External Website",
         points: [
-          "On-campus visit & shoot",
-          "Key stakeholder interviews",
+          "Program live on university website",
+          "⏱ TAT: Within 3 business days after signing the agreement",
+        ],
+      },
+      {
+        heading: "Campus Tour & Video Byte",
+        points: [
+          "On-campus visit & shoot key stakeholders",
           "Edit & publish on YouTube",
           "Social media amplification",
+          "⏱ TAT: Within 1 business day after signing the agreement",
         ],
       },
     ],
@@ -148,6 +166,8 @@ const workstreams = [
     bgClass: "bg-ws-6",
     borderClass: "border-ws-6",
     critical: false,
+    tat: null,
+    tatNote: null,
     warning: "Prevents loan-related admission delays.",
     items: [
       {
@@ -219,6 +239,19 @@ const WorkstreamSection = () => {
                     </div>
                   )}
 
+                  {/* TAT Badge */}
+                  {ws.tat && (
+                    <div className="flex items-start gap-1.5 mb-3 p-2 rounded-lg bg-primary/5 border border-primary/10">
+                      <Clock className="w-3.5 h-3.5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="text-xs font-semibold text-primary">TAT: {ws.tat}</p>
+                        {ws.tatNote && (
+                          <p className="text-xs text-muted-foreground mt-0.5">{ws.tatNote}</p>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -234,8 +267,8 @@ const WorkstreamSection = () => {
                               <div className="space-y-1">
                                 {item.points.map((p, pi) => (
                                   <div key={pi} className="flex items-start gap-2 text-xs text-muted-foreground">
-                                    <div className={`w-1 h-1 rounded-full ${ws.bgClass} mt-1.5 flex-shrink-0`} />
-                                    <span>{p}</span>
+                                    <div className={`w-1 h-1 rounded-full ${p.startsWith("⏱") ? "bg-primary" : ws.bgClass} mt-1.5 flex-shrink-0`} />
+                                    <span className={p.startsWith("⏱") ? "text-primary font-medium" : ""}>{p}</span>
                                   </div>
                                 ))}
                               </div>
